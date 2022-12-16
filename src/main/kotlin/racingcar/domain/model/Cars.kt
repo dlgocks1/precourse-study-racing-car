@@ -10,10 +10,9 @@ class Cars(private val cars: List<Car>, private val numberGenerator: NumberGener
         }
     }
 
-    fun getWinner(): List<Car> {
+    fun getWinner(): List<String> {
         val winnerPosition = cars.maxOf { it.getPosition() }
-        cars.filter { it.getPosition() == winnerPosition }
-        return cars
+        return cars.filter { it.getPosition() == winnerPosition }.map { it.getName() }
     }
 
 }
