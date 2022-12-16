@@ -3,6 +3,7 @@ package racingcar.domain
 
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import racingcar.domain.model.Car
 
@@ -16,6 +17,7 @@ class CarFactoryTest {
     }
 
     @Test
+    @DisplayName("올바른 이름을 가진 자동차를 생성하는지 테스트 한다.")
     fun generateCar() {
         val userInput = "pobi,woni,jun"
         val cars = carFactory.generateCar(userInput)
