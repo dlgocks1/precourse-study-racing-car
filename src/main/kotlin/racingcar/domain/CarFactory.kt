@@ -3,12 +3,15 @@ package racingcar.domain
 import racingcar.domain.model.Car
 import racingcar.domain.model.Cars
 
-class CarFactory {
+class CarFactory(private val randomNumberGenerator) {
 
     fun generateCar(carNames: String): Cars {
-        return Cars(divideFromComma(carNames).map {
-            Car(it)
-        })
+        return Cars(
+            cars = divideFromComma(carNames).map {
+                Car(it)
+            },
+            numberGenerator = randomNumberGenerator
+        )
     }
 
     private fun divideFromComma(str: String): List<String> = str.split(",")
