@@ -18,7 +18,7 @@ class CarFactoryTest {
 
     @Test
     @DisplayName("올바른 이름을 가진 자동차를 생성하는지 테스트 한다.")
-    fun generateCar() {
+    fun generateCarTest() {
         val userInput = "pobi,woni,jun"
         val cars = carFactory.generateCar(userInput)
         userInput.split(",").forEachIndexed { idx, carName ->
