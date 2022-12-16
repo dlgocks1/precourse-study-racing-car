@@ -1,6 +1,7 @@
 package racingcar.view
 
 import racingcar.domain.model.Cars
+import racingcar.utils.addResults
 
 class OutputView {
 
@@ -15,8 +16,13 @@ class OutputView {
         println()
     }
 
-    fun finalWinner() {
+    fun finalWinner(finalWinnder: List<String>) {
         println("최종 우승자 : ")
-        // TODO 최종 우승자 출력하기
+        val results = StringBuilder()
+        for (idx in 1..finalWinnder.size) {
+            results.append(finalWinnder[idx])
+            if (idx == finalWinnder.size) continue
+            results.append(", ")
+        }
     }
 }

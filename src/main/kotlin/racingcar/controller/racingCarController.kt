@@ -15,6 +15,11 @@ class racingCarController(
         setCars()
         setAttemps()
         stratRacing()
+        finalWinner()
+    }
+
+    private fun finalWinner() {
+        outputView.finalWinner(racingManagement.finalWinnder())
     }
 
     private fun stratRacing() {

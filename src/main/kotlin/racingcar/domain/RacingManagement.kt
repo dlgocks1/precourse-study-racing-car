@@ -27,6 +27,11 @@ class RacingManagement {
     }
 
     fun isEnded(): Boolean = tryCount == attemps
+    fun finalWinnder(): List<String> {
+        return cars.getWinner().map {
+            it.getName()
+        }
+    }
 
 
 }
