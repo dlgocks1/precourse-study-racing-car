@@ -1,5 +1,7 @@
 package racingcar.domain.model
 
+import racingcar.domain.NumberGenerator
+
 class Car(private val name: String) {
 
     private var position: Int = 0
@@ -9,6 +11,14 @@ class Car(private val name: String) {
     }
 
     fun getName(): String = name
+
+    fun getPosition(): Int = position
+
+    fun move(numberGenerator: NumberGenerator) {
+        if (numberGenerator.generate() >= 4) {
+            position += 1
+        }
+    }
 
     private fun validateName(name: String) {
         require(name.length in 1..5) {
