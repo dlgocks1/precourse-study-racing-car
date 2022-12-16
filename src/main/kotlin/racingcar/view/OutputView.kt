@@ -1,12 +1,18 @@
 package racingcar.view
 
-import camp.nextstep.edu.missionutils.Console
-import java.lang.IllegalArgumentException
+import racingcar.domain.model.Cars
 
 class OutputView {
-    fun excutionResults() {
+
+    fun result() {
         println("실행 결과")
-        // TODO 실행 결과 출력하기
+    }
+
+    fun excutionResults(race: Cars) {
+        race.forEach { car ->
+            println(car.toString())
+        }
+        println()
     }
 
     fun finalWinner() {
