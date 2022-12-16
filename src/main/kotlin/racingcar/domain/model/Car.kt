@@ -4,5 +4,14 @@ class Car(private val name: String) {
 
     private var position: Int = 0
 
-    // 추가 기능 구현
+    init {
+        validateName(name)
+    }
+
+    private fun validateName(name: String) {
+        require(name.length in 1..5) {
+            "자동차의 이름은 1글자 이상 5자 이하여야 합니다."
+        }
+    }
+
 }
