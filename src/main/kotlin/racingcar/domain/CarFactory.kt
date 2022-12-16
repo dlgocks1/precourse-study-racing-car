@@ -6,8 +6,11 @@ import racingcar.domain.model.Cars
 class CarFactory {
 
     fun generateCar(carNames: String): Cars {
-        return Cars(carNames.split(",").map {
+        return Cars(divideFromComma(carNames).map {
             Car(it)
         })
     }
+
+    private fun divideFromComma(str: String): List<String> = str.split(",")
+
 }
