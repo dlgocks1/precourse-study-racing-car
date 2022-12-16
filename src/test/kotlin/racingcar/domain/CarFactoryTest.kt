@@ -13,7 +13,7 @@ class CarFactoryTest {
 
     @BeforeEach
     fun setUp() {
-        carFactory = CarFactory()
+        carFactory = CarFactory(RandomNumberGenerator())
     }
 
     @Test
