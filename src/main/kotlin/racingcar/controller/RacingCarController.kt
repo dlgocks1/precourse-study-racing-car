@@ -4,7 +4,7 @@ import racingcar.domain.RacingManagement
 import racingcar.view.InputView
 import racingcar.view.OutputView
 
-class racingCarController(
+class RacingCarController(
     private val inputView: InputView,
     private val outputView: OutputView
 ) {
