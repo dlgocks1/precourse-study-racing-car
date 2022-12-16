@@ -1,12 +1,13 @@
 package racingcar.domain
 
 import racingcar.domain.model.Cars
+import racingcar.utils.ZERO
 
 class RacingManagement {
 
     lateinit var cars: Cars
-    private var attemps = 0
-    private var tryCount = 0
+    private var attemps = ZERO
+    private var tryCount = ZERO
 
     private val carFactory = CarFactory(
         RandomNumberGenerator()
@@ -22,7 +23,7 @@ class RacingManagement {
 
     fun race(): Cars {
         cars.move()
-        tryCount += 1
+        tryCount++
         return cars
     }
 

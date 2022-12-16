@@ -1,7 +1,8 @@
 package racingcar.domain.model
 
 import racingcar.domain.NumberGenerator
-import racingcar.utils.addResults
+import racingcar.utils.*
+import racingcar.utils.ERROR.CAR_NAME_LENGTH
 import kotlin.text.StringBuilder
 
 class Car(private val name: String) {
@@ -25,14 +26,14 @@ class Car(private val name: String) {
     fun getPosition(): Int = position
 
     fun move(numberGenerator: NumberGenerator) {
-        if (numberGenerator.generate() >= 4) {
-            position += 1
+        if (numberGenerator.generate() >= MINIMUN_CAR_SPEED) {
+            position += ONE
         }
     }
 
     private fun validateName(name: String) {
-        require(name.length in 1..5) {
-            "자동차의 이름은 1글자 이상 5자 이하여야 합니다."
+        require(name.length in MINIMUN_CAR_NAME_LENGTH..MAXIMUN_CAR_NAME_LENGTH) {
+            CAR_NAME_LENGTH
         }
     }
 

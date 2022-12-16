@@ -2,6 +2,7 @@ package racingcar.domain
 
 import racingcar.domain.model.Car
 import racingcar.domain.model.Cars
+import racingcar.utils.COMMA
 
 class CarFactory(private val randomNumberGenerator: NumberGenerator) {
 
@@ -14,6 +15,6 @@ class CarFactory(private val randomNumberGenerator: NumberGenerator) {
         )
     }
 
-    private fun divideFromComma(str: String): List<String> = str.split(",")
+    private fun divideFromComma(str: String): List<String> = str.split(COMMA)
 
 }

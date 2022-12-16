@@ -1,12 +1,14 @@
 package racingcar.view
 
 import racingcar.domain.model.Cars
-import racingcar.utils.addResults
+import racingcar.utils.Message.OUPUT_RESULT
+import racingcar.utils.Message.OUTPUT_FINAL_WINNER
+import racingcar.utils.SEPARATED_COMMA
 
 class OutputView {
 
     fun result() {
-        println("실행 결과")
+        println(OUPUT_RESULT)
     }
 
     fun excutionResults(race: Cars) {
@@ -18,11 +20,11 @@ class OutputView {
 
     fun finalWinner(finalWinnder: List<String>) {
         val results = StringBuilder()
-        results.append("최종 우승자 : ")
+        results.append(OUTPUT_FINAL_WINNER)
         for (idx in finalWinnder.indices) {
             results.append(finalWinnder[idx])
             if (idx == finalWinnder.size - 1) continue
-            results.append(", ")
+            results.append(SEPARATED_COMMA)
         }
         println(results.toString())
     }
