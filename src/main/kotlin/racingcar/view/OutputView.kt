@@ -17,12 +17,13 @@ class OutputView {
     }
 
     fun finalWinner(finalWinnder: List<String>) {
-        println("최종 우승자 : ")
         val results = StringBuilder()
-        for (idx in 1..finalWinnder.size) {
+        results.append("최종 우승자 : ")
+        for (idx in finalWinnder.indices) {
             results.append(finalWinnder[idx])
-            if (idx == finalWinnder.size) continue
+            if (idx == finalWinnder.size - 1) continue
             results.append(", ")
         }
+        println(results.toString())
     }
 }
